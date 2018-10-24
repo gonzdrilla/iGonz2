@@ -9,8 +9,8 @@ insert into Cancion (nombre, duracion) values
  ('Something Human','226'),
  ('Thought Contagion','206'),
  ('Dig Down','228'),
- ('',''),
- ('',''),
+ ('Starlight',''),
+ ('Knights of Cydonia',''),
  ('',''),
  ('',''),
  ('',''),
@@ -34,7 +34,15 @@ cur.execute(sql)
 sql ="""
 insert into Autor (nombre) values 
 ('MUSE'),
-()
+('Gorillaz'),
+(''),
+(''),
+(''),
+(''),
+(''),
+(''),
+(''),
+('')
 
 returning id;
 
