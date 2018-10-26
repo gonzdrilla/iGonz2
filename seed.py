@@ -4,61 +4,64 @@ conn = psycopg2.connect("host=%s dbname=%s user=%s password=%s port=%s"%(host,da
 cur = conn.cursor()
 sql ="""
 insert into Cancion (nombre, duracion) values 
- 1('The Dark Side','227'),
- 2('Pressure','235'),
- 3('Something Human','226'),
- 4('Thought Contagion','206'),
- 5('Dig Down','228'),
+ ('The Dark Side','227'),
+ ('Pressure','235'),
+ ('Something Human','226'),
+ ('Thought Contagion','206'),
+ ('Dig Down','228'),
  
- 6('Humility','198'),
- 7('Tranz','162'),
- 8('Hollywood','293'),
- 9('Kansas','248'),
- 10('Sorcererz','180'),
- 11('Idaho','222'),
- 12('Lake Zurich','253'),
- 13('Magic City','239'),
- 14('Fire Flies','233'),
- 15('One Percent','141'),
- 16('Souk Eye','274'),
+ ('Humility','198'),
+ ('Tranz','162'),
+ ('Hollywood','293'),
+ ('Kansas','248'),
+ ('Sorcererz','180'),
+ ('Idaho','222'),
+ ('Lake Zurich','253'),
+ ('Magic City','239'),
+ ('Fire Flies','233'),
+ ('One Percent','141'),
+ ('Souk Eye','274'),
  
- 17('Flesh and Bone','239'),
- 18('Runaways','243'),#####
- 19('The Way It Was','231'),#####
- 20('Here With Me','292'),
- 21('A Matter of Time','251'),
- 22('Deadlines and Commitments','262'),
- 23('Miss Atomic Bomb','293'),#####
- 24('The Rising Tide','257'),
- 25('Heart of a Girl','274'),
- 26('From Here On Out','147'),
- 27('Be Still','273'),######
- 28('Battle Born','313'),
- 29('Carry Me Home','224'),
- 30('Prize Fighter','279'),
+ ('Flesh and Bone','239'),
+ ('Runaways','243'),
+ ('The Way It Was','231'),
+ ('Here With Me','292'),
+ ('A Matter of Time','251'),
+ ('Deadlines and Commitments','262'),
+ ('Miss Atomic Bomb','293'),
+ ('The Rising Tide','257'),
+ ('Heart of a Girl','274'),
+ ('From Here On Out','147'),
+ ('Be Still','273'),
+ ('Battle Born','313'),
+ ('Carry Me Home','224'),
+ ('Prize Fighter','279'),
  
- 31('Mr. Brightside','222'),
- 32('Somebody Told Me','197'),
- 33('Smile Like You Mean It','234'),
- 34('All These Things That Ive Done','301'),
- 35('When You Were You Young','218'),
- 36('Read My Mind','246'),
- 37('For Reasons Unknown','212'),
- 38('Human','249'),
- 39('Spaceman','284'),
- 40('A Dustland Fairytale','225'),
- 41('Shot At The Night','242'),
- 42('Just Another Girl','261'),
+ ('Mr. Brightside','222'),
+ ('Somebody Told Me','197'),
+ ('Smile Like You Mean It','234'),
+ ('All These Things That Ive Done','301'),
+ ('When You Were You Young','218'),
+ ('Read My Mind','246'),
+ ('For Reasons Unknown','212'),
+ ('Human','249'),
+ ('Spaceman','284'),
+ ('A Dustland Fairytale','225'),
+ ('Shot At The Night','242'),
+ ('Just Another Girl','261'),
  
- 43('',''),
- 44('',''),
- 45('',''),
- 46('',''),
- 47('',''),
- 48('',''),
- 49('',''),
- 50('',''),
- ('',''),
+ ('Drop It Like Its Hot','266'),
+ ('Bang Out','185'),
+ 
+ ('Give Me The Night','301'),
+ ('Love Dance','198'),
+ 
+ ('Save That Shit','231'),
+ ('The Brightside','216'),
+ ('U Said','224'),
+ ('Problems','209'),
+ 
+ ('Waiting On My Angel','243')
  
 
 returning id;
@@ -67,16 +70,13 @@ cur.execute(sql)
 
 sql ="""
 insert into Autor (nombre) values 
-1('MUSE'),
-2('Gorillaz'),
-3('George Benson'),
-4('Snoop Dogg'),
-5('Jamie Principle'),
-6('The Killers'),
-7(''),
-8(''),
-9(''),
-('')
+('MUSE'),
+('Gorillaz'),
+('George Benson'),
+('Snoop Dogg'),
+('Jamie Principle'),
+('The Killers'),
+('Lil Peep')
 
 returning id;
 
@@ -97,38 +97,42 @@ insert into Cancion_Autor (cancion_id, autor_id) values
 ('31','6'),('32','6'),('33','6'),('34','6'),('35','6'),('36','6'),('37','6'),('38','6'),('39','6'),('40','6'),
 ('41','6'),('42','6'),
 
-('',''),
-('',''),
-('',''),
-('',''),
-('',''),
+('43','4'),('44','4'),
+
+('45','3'),('46','3'),
+
+('47','7'),('48','7'),('49','7'),('50','7'),
+
+('51','5')
+
 
 """
 cur.execute(sql)
 
 sql ="""
 insert into Generos (nombre) values 
-1('Hard Rock'),
-2('Rock Progresivo'),
-3('Rock Electronico'),
-4('Rock Espacial'),
-5('Electronica'),
+('Hard Rock'),
+('Rock Progresivo'),
+('Rock Electronico'),
+('Rock Espacial'),
+('Electronica'),
 
-6('Alternativo'),
-7('Independiente'),
+('Alternativo'),
+('Independiente'),
 
-8('Indie Rock'),
-9('New Wave'),
-10('Rock Alternativo'),
-11('Heartland Rock'),
-12('Rock'),
+('Indie Rock'),
+('New Wave'),
+('Rock Alternativo'),
+('Heartland Rock'),
+('Rock'),
 
-13(''),
-14(''),
-15(''),
-16(''),
-17(''),
-18('')
+('Westcoast Hip Hop'),
+('Rap'),
+
+('Smooth jazz'),
+
+('Trap'),
+('Hip Hop')
 
 returning id;
 """
@@ -136,7 +140,7 @@ cur.execute(sql)
 
 sql ="""
 insert into Cancion_Genero (cancion_id, genero_id) values 
-('1','6'),('1','7'),('2','6'),('2','7'),('3','6'),('3','7'),('4','6'),('4','7'),('5','6'),('5','7')
+('1','6'),('1','7'),('2','6'),('2','7'),('3','6'),('3','7'),('4','6'),('4','7'),('5','6'),('5','7'),
 
 
 ('6','6'),('6','7'),('7','6'),('7','7'),('8','6'),('8','7'),('9','6'),('9','7'),('10','6'),('10','7'),('11','6'),('11','7'),
@@ -154,19 +158,27 @@ insert into Cancion_Genero (cancion_id, genero_id) values
 ('41','6'),('41','7'),('41','12'),('42','6'),('42','7'),('42','12'),
 
 
-('',''),
+('43','13'),('43','14'),('44','13'),('44','14'),
 
+('45','15'),('46','15'),
 
+('47','16'),('47','17'),('48','16'),('48','17'),('49','16'),('49','17'),('50','16'),('50','17'),
+
+('51','5')
 
 """
 cur.execute(sql)
 
 sql ="""
 insert into Album (nombre,ano) values 
-1('Simulation Theory','2018'),
-2('The Now Now','2018'),
-3('Battle Born Deluxe','2012'),
-4('Direct Hits Deluxe','2013'),
+('Simulation Theory','2018'),
+('The Now Now','2018'),
+('Battle Born Deluxe','2012'),
+('Direct Hits Deluxe','2013'),
+('Rhythm and Gangsta: The Masterpiece','2004'),
+('Give Me the Night','1980'),
+('Come Over When You Are Sober','2017'),
+('Frankie Knuckles Presents','1985')
 
 returning id;
 """
@@ -186,7 +198,13 @@ insert Cancion_Album (Cancion_id, Album_id) values
 ('31','4'),('32','4'),('33','4'),('34','4'),('35','4'),('36','4'),('37','4'),('38','4'),('39','4'),('40','4'),
 ('41','4'),('42','4'),
 
-('',''),('',''),
+('43','5'),('44','5'),
+
+('45','6'),('46','6'),
+
+('47','7'),('48','7'),('49','7'),('50','7'),
+
+('51','8')
 
 """
 cur.execute(sql)
