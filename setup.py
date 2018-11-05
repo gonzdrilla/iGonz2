@@ -19,7 +19,7 @@ cur.execute(sql)
 
 sql ="""
 CREATE TABLE Autor
-           (id integer PRIMARY KEY, nombre varchar(40));
+           (id serial PRIMARY KEY, nombre varchar(40));
 """
 
 cur.execute(sql)
@@ -61,7 +61,7 @@ cur.execute(sql)
 
 sql ="""
 CREATE TABLE Usuarios
-	(id serial PRIMARY KEY, name varchar(40), pass varchar(100));
+        (id serial PRIMARY KEY, name varchar(40), pass varchar(100));
 """
 
 cur.execute(sql)
