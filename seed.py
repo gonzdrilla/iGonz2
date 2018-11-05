@@ -3,13 +3,13 @@ import psycopg2
 conn = psycopg2.connect("host=%s dbname=%s user=%s password=%s port=%s"%(host,database,user,passwd,port))
 cur = conn.cursor()
 sql ="""
-insert into Cancion (nombre, duracion) values 
+insert into Cancion (nombre, duracion) values
  ('The Dark Side','227'),
  ('Pressure','235'),
  ('Something Human','226'),
  ('Thought Contagion','206'),
  ('Dig Down','228'),
- 
+
  ('Humility','198'),
  ('Tranz','162'),
  ('Hollywood','293'),
@@ -21,7 +21,7 @@ insert into Cancion (nombre, duracion) values
  ('Fire Flies','233'),
  ('One Percent','141'),
  ('Souk Eye','274'),
- 
+
  ('Flesh and Bone','239'),
  ('Runaways','243'),
  ('The Way It Was','231'),
@@ -36,7 +36,7 @@ insert into Cancion (nombre, duracion) values
  ('Battle Born','313'),
  ('Carry Me Home','224'),
  ('Prize Fighter','279'),
- 
+
  ('Mr. Brightside','222'),
  ('Somebody Told Me','197'),
  ('Smile Like You Mean It','234'),
@@ -49,27 +49,27 @@ insert into Cancion (nombre, duracion) values
  ('A Dustland Fairytale','225'),
  ('Shot At The Night','242'),
  ('Just Another Girl','261'),
- 
+
  ('Drop It Like Its Hot','266'),
  ('Bang Out','185'),
- 
+
  ('Give Me The Night','301'),
  ('Love Dance','198'),
- 
+
  ('Save That Shit','231'),
  ('The Brightside','216'),
  ('U Said','224'),
  ('Problems','209'),
- 
+
  ('Waiting On My Angel','243')
- 
+
 
 returning id;
 """
 cur.execute(sql)
 
 sql ="""
-insert into Autor (nombre) values 
+insert into Autor (nombre) values
 ('MUSE'),
 ('Gorillaz'),
 ('George Benson'),
@@ -81,10 +81,12 @@ insert into Autor (nombre) values
 returning id;
 
 """
+print "aqui"
 cur.execute(sql)
+print "aca"
 
 sql ="""
-insert into Cancion_Autor (cancion_id, autor_id) values 
+insert into Cancion_Autor (cancion_id, autor_id) values
 ('1','1'),('2','1'),('3','1'),('4','1'),('5','1'),
 
 
@@ -110,7 +112,7 @@ insert into Cancion_Autor (cancion_id, autor_id) values
 cur.execute(sql)
 
 sql ="""
-insert into Generos (nombre) values 
+insert into Generos (nombre) values
 ('Hard Rock'),
 ('Rock Progresivo'),
 ('Rock Electronico'),
@@ -139,7 +141,7 @@ returning id;
 cur.execute(sql)
 
 sql ="""
-insert into Cancion_Genero (cancion_id, genero_id) values 
+insert into Cancion_Genero (cancion_id, genero_id) values
 ('1','6'),('1','7'),('2','6'),('2','7'),('3','6'),('3','7'),('4','6'),('4','7'),('5','6'),('5','7'),
 
 
@@ -170,7 +172,7 @@ insert into Cancion_Genero (cancion_id, genero_id) values
 cur.execute(sql)
 
 sql ="""
-insert into Album (nombre,ano) values 
+insert into Album (nombre,ano) values
 ('Simulation Theory','2018'),
 ('The Now Now','2018'),
 ('Battle Born Deluxe','2012'),
@@ -185,7 +187,7 @@ returning id;
 cur.execute(sql)
 
 sql ="""
-insert  into Cancion_Album (cancion_id, album_id) values  
+insert into Cancion_Album (cancion_id, album_id) values
 ('1','1'),('2','1'),('3','1'),('4','1'),('5','1'),
 
 ('6','2'),('7','2'),('8','2'),('9','2'),('10','2'),('11','2'),('12','2'),('13','2'),('14','2'),('15','2'),('16','2'),
