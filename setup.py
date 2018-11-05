@@ -10,7 +10,7 @@ CREATE SCHEMA public;"""
 cur.execute(sql)
 
 sql ="""
-CREATE TABLE Cancion
+CREATE TABLE Canciones
            (id serial PRIMARY KEY, nombre varchar(80), duracion integer);
 """
 
@@ -18,14 +18,14 @@ cur.execute(sql)
 
 
 sql ="""
-CREATE TABLE Autor
+CREATE TABLE Autores
            (id serial PRIMARY KEY, nombre varchar(40));
 """
 
 cur.execute(sql)
 
 sql ="""
-CREATE TABLE Cancion_Autor
+CREATE TABLE Canciones_Autores
            (Cancion_id integer, Autor_id integer);
 """
 
@@ -39,21 +39,21 @@ CREATE TABLE  Generos
 cur.execute(sql)
 
 sql ="""
-CREATE TABLE Cancion_Genero
+CREATE TABLE Canciones_Generos
            (Cancion_id integer, Genero_id integer);
 """
 
 cur.execute(sql)
 
 sql = """
-CREATE TABLE Album
+CREATE TABLE Albumes
            (id serial PRIMARY KEY, nombre varchar(140), ano integer);
 """
 
 cur.execute(sql)
 
 sql = """
-CREATE TABLE Cancion_Album
+CREATE TABLE Canciones_Albumes
            (Cancion_id integer, Album_id integer);
 """
 
