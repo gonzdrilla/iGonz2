@@ -3,7 +3,7 @@ import psycopg2
 conn = psycopg2.connect("host=%s dbname=%s user=%s password=%s port=%s"%(host,database,user,passwd,port))
 cur = conn.cursor()
 sql ="""
-insert into Cancion (nombre, duracion) values
+insert into Canciones (nombre, duracion) values
  ('The Dark Side','227'),
  ('Pressure','235'),
  ('Something Human','226'),
@@ -69,7 +69,7 @@ returning id;
 cur.execute(sql)
 
 sql ="""
-insert into Autor (nombre) values
+insert into Autores (nombre) values
 ('MUSE'),
 ('Gorillaz'),
 ('George Benson'),
@@ -86,7 +86,7 @@ cur.execute(sql)
 print "aca"
 
 sql ="""
-insert into Cancion_Autor (cancion_id, autor_id) values
+insert into Canciones_Autores (cancion_id, autor_id) values
 ('1','1'),('2','1'),('3','1'),('4','1'),('5','1'),
 
 
@@ -141,7 +141,7 @@ returning id;
 cur.execute(sql)
 
 sql ="""
-insert into Cancion_Genero (cancion_id, genero_id) values
+insert into Canciones_Generos (cancion_id, genero_id) values
 ('1','6'),('1','7'),('2','6'),('2','7'),('3','6'),('3','7'),('4','6'),('4','7'),('5','6'),('5','7'),
 
 
@@ -172,7 +172,7 @@ insert into Cancion_Genero (cancion_id, genero_id) values
 cur.execute(sql)
 
 sql ="""
-insert into Album (nombre,ano) values
+insert into Albumes (nombre,ano) values
 ('Simulation Theory','2018'),
 ('The Now Now','2018'),
 ('Battle Born Deluxe','2012'),
@@ -187,7 +187,7 @@ returning id;
 cur.execute(sql)
 
 sql ="""
-insert into Cancion_Album (cancion_id, album_id) values
+insert into Canciones_Albumes (cancion_id, album_id) values
 ('1','1'),('2','1'),('3','1'),('4','1'),('5','1'),
 
 ('6','2'),('7','2'),('8','2'),('9','2'),('10','2'),('11','2'),('12','2'),('13','2'),('14','2'),('15','2'),('16','2'),
