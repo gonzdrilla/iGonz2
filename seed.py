@@ -81,9 +81,9 @@ insert into Autores (nombre) values
 returning id;
 
 """
-print "aqui"
+
 cur.execute(sql)
-print "aca"
+
 
 sql ="""
 insert into Canciones_Autores (cancion_id, autor_id) values
