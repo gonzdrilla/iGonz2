@@ -36,39 +36,29 @@
 </ul>
 
 <div>
-  <a> <b> {{ cancion[0][1] }}  </b> </a> 
+  <a> <b> {{ autor[0][1] }} </b> </a>
 
-  <p> </p>
+  <p></p>
 
-  <p style="color:black"> <a> Duración: - {{cancion[0][2] }}seg  </a> </p>
-
-  <p style="color:black">Autores:
-  {% for i in autor %}
-  {% for k in i %}
-  <a href="/autor/{{ k[0] }}">  - {{ k[1] }} </a>
-  {% endfor %}
-  {% endfor %}
-	</p>
-
-<p style="color:black">
-	Generos:
- {% for i in genero %}
-  {% for k in i %}
-  <a href="/genero/{{ k[0] }}">  - {{ k[1] }} </a>
-  {% endfor %}
-  {% endfor %}
-</p>
-
-<p style="color:black">
-	Albumes:
- {% for i in album %}
+  <p style="color:black">Albumes:
+  {% for i in album %}
   {% for k in i %}
   <a href="/album/{{ k[0] }}">  - {{ k[1] }} </a>
   {% endfor %}
   {% endfor %}
-</p>
+	</p>
+
+  <p style="color:black">Canciones:
+  {% for i in cancion %}
+  {% for k in i %}
+  <p> <a href="/cancion/{{ k[0] }}">  - {{ k[1] }} </a> </p>
+  {% endfor %}
+  {% endfor %}
+  </p>
+
 
 </div>
+
 
 </body>
 </html>
